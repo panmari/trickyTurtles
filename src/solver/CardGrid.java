@@ -73,7 +73,8 @@ public class CardGrid extends GameGrid implements GGExitListener {
 	}
 	
 	public Location putDownCard(TurtleCard nextCard, boolean doDraw) {
-		cardSet.remove(nextCard);
+		if (!cardSet.remove(nextCard))
+			throw new CardNotReadyException("Card not in available cards!");
 		//find first empty slot:
 		for (int y = 0; y < grid.length; y++) 
 			for (int x = 0; x < grid[y].length; x++)
