@@ -58,7 +58,7 @@ public class Solver {
 			sleep(true);
 		}
 		for (TurtleCard tc: new LinkedList<TurtleCard>(availableCards)) {
-			Location p = gg.putDownCard(tc);
+			Location p = gg.putDownCard(tc, !fastForward);
 			status = "No conflict -> Added new card";
 			boolean initialRotation = false;
 			while (!initialRotation) {

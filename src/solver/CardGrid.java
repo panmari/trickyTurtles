@@ -72,14 +72,15 @@ public class CardGrid extends GameGrid implements GGExitListener {
 		return !turtle.matches(otherTurtle);
 	}
 	
-	public Location putDownCard(TurtleCard nextCard) {
+	public Location putDownCard(TurtleCard nextCard, boolean doDraw) {
 		cardSet.remove(nextCard);
 		//find first empty slot:
 		for (int y = 0; y < grid.length; y++) 
 			for (int x = 0; x < grid[y].length; x++)
 				if (grid[x][y] == null) {
 					grid[x][y] = nextCard;
-					addActor(nextCard, new Location(x,y));
+					if (doDraw)
+						addActor(nextCard, new Location(x,y));
 					return new Location(x, y);
 				}
 		return null;
