@@ -27,11 +27,15 @@ public class Solver {
 	public Solver(String dataset, boolean shuffle, boolean fastForward) {
 		this.fastForward = fastForward;
 		gg = new CardGrid(dataset, shuffle);
-		solve(gg.getCards());
-		if (solutions.size() > 0)
-			SolutionConsole.getInstance().printSolutions(gg, solutions);
-		else gg.setStatusText("There are no solutions for this set!");
-		gg.lineUpCardsWithId();
+		try {
+			solve(gg.getCards());
+			if (solutions.size() > 0)
+				SolutionConsole.getInstance().printSolutions(gg, solutions);
+			else gg.setStatusText("There are no solutions for this set!");
+			gg.lineUpCardsWithId();
+		} catch(NullPointerException e) {
+			System.out.println("Most probably interrupted by user");
+		}
 	}
 
 	/**

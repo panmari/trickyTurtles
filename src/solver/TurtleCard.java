@@ -30,7 +30,7 @@ public class TurtleCard extends Actor implements Cloneable, Comparable<TurtleCar
 	 * @param tc the TurtleCard that is to be cloned
 	 */
 	private TurtleCard(TurtleCard tc) {
-		// do not need to call super constructer as long as we dont want to draw them
+		//do not need to call super constructer as long as we dont want to draw them
 		//super(true, tc.getScaledImage(1, tc.rotation.ordinal()*90));
 		this.cardSetting = new LinkedList<HalfTurtle>(tc.cardSetting);
 		this.rotation = tc.rotation;

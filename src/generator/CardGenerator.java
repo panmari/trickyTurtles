@@ -10,7 +10,7 @@ import ch.aplu.jgamegrid.Location;
 
 public class CardGenerator {
 
-	private static final String version = "1.0";
+	private static final String version = "1.1";
 	private List<DragHalfTurtle> availableTurtles;
 	private static GeneratorCardGrid generatorCardGrid;
 
